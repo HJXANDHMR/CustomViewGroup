@@ -1,4 +1,4 @@
-package com.feidee.customviewgroup;
+package com.feidee.viewgroup;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

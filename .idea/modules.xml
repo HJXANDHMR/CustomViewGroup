@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/CustomViewGroup.iml" filepath="$PROJECT_DIR$/CustomViewGroup.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/viewgroup/viewgroup.iml" filepath="$PROJECT_DIR$/viewgroup/viewgroup.iml" />
     </modules>
   </component>
 </project>

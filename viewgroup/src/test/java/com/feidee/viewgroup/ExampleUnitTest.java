@@ -1,4 +1,4 @@
-package com.feidee.customviewgroup;
+package com.feidee.viewgroup;
 
 import org.junit.Test;
 
