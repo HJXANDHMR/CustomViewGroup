@@ -19,7 +19,7 @@ public class CustomViewGroup extends ViewGroup {
         super(context);
     }
 
-    // 重写它的onMeasure()，在该方法中进行对子View的大小进行测量
+    // 重写它的onMeasure() 在该方法中进行对子View的大小进行测量
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
 

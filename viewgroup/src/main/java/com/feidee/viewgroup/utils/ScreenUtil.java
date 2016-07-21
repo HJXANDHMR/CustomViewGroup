@@ -8,7 +8,6 @@ import android.view.WindowManager;
  * Created by 何健雄 on 16-7-20.
  */
 public class ScreenUtil {
-
     private ScreenUtil() {
         /*cannot be instantiated*/
         throw new UnsupportedOperationException("cannot be instantiated");

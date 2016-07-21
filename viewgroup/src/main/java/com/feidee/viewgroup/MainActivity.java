@@ -5,20 +5,20 @@ package com.feidee.viewgroup;
  */
 
 import android.app.Activity;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.feidee.viewgroup.domain.ViewSize;
+import com.feidee.viewgroup.domain.ViewSizeInfo;
 import com.feidee.viewgroup.utils.ScreenUtil;
 import com.feidee.viewgroup.view.CustomViewGroup;
 
 import java.util.ArrayList;
 
+
 public class MainActivity extends Activity {
     private CustomViewGroup mViewGroup;
-    private ArrayList<ViewSize> mViewSizes;
+    private ArrayList<ViewSizeInfo> mViewSizes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,39 +26,36 @@ public class MainActivity extends Activity {
 
         //初始化数据
         mViewSizes = getViewSizes();
-        mViewGroup = getMyViewGroup(mViewSizes);
+        mViewGroup = getViewGroup(mViewSizes);
         setContentView(mViewGroup);
-
     }
 
-    private ArrayList<ViewSize> getViewSizes() {
-        ArrayList<ViewSize> viewSizes = new ArrayList<>();
+    private ArrayList<ViewSizeInfo> getViewSizes() {
+        ArrayList<ViewSizeInfo> viewSizes = new ArrayList<>();
 
-        viewSizes.add(new ViewSize(1, 1,"#FF69B4"));
-        viewSizes.add(new ViewSize(2, 2,"#FF00FF"));
-        viewSizes.add(new ViewSize(4, 4,"#9932CC"));
-        viewSizes.add(new ViewSize(2, 5,"#0000FF"));
-//        viewSizes.add(new ViewSize(1, 2));
+        viewSizes.add(new ViewSizeInfo(1, 1,R.color.colorAccent));
+        viewSizes.add(new ViewSizeInfo(3, 2,R.color.colorDarkOrchid));
+        viewSizes.add(new ViewSizeInfo(4, 4,R.color.colorPrimary));
+        viewSizes.add(new ViewSizeInfo(1, 5,R.color.colorLightBLue));
         return viewSizes;
     }
 
-    private CustomViewGroup getMyViewGroup(ArrayList<ViewSize> viewSizes) {
+    private CustomViewGroup getViewGroup(ArrayList<ViewSizeInfo> viewSizes) {
         CustomViewGroup myViewGroup = new CustomViewGroup(this);
 
         myViewGroup.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
         int width = ScreenUtil.getScreenWidth(this)/10;
         int height =ScreenUtil.getScreenHeight(this)/5;
+
         for (int i = 0; i <viewSizes.size() ; i++) {
-            ViewSize viewSize =viewSizes.get(i);
+            ViewSizeInfo viewSize =viewSizes.get(i);
             TextView textView = new TextView(this);
             textView.setText("TextView"+i);
-//            textView.setBackgroundColor(Color.RED);
-            textView.setBackgroundColor(Color.parseColor(viewSize.getColor()));
+            textView.setBackgroundColor(getResources().getColor(viewSize.getColor()));
             textView.setWidth(width* viewSize.getWidth());
             textView.setHeight(height* viewSize.getHeight());
             myViewGroup.addView(textView);
         }
-
         return myViewGroup;
     }
 }

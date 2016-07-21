@@ -3,25 +3,24 @@ package com.feidee.viewgroup.domain;
 /**
  * Created by 何健雄 on 16-7-20.
  */
-public class ViewSize {
+public class ViewSizeInfo {
     private int width;
     private int height;
     // 设置默认颜色
-    private String color="#B0E0E6";
+    private int color;
 
-    public ViewSize(int width, int height) {
+    public ViewSizeInfo(int width, int height) {
         this.width = width;
         this.height = height;
     }
 
-    public ViewSize(int width, int height, String color) {
+    public ViewSizeInfo(int width, int height, int color) {
         this.width = width;
         this.height = height;
         this.color = color;
     }
 
     public int getWidth() {
-
         return width;
     }
 
@@ -37,11 +36,11 @@ public class ViewSize {
         this.height = height;
     }
 
-    public String getColor() {
+    public int getColor() {
         return color;
     }
 
-    public void setColor(String color) {
+    public void setColor(int color) {
         this.color = color;
     }
 }
