@@ -1,1 +1,1 @@
-include ':viewgroup', ':app'
+include ':viewgroup'
