@@ -1,1 +1,2 @@
 # CustomViewGroup
+根据给定的view宽高度实现View的布局
